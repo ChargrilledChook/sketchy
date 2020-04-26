@@ -1,14 +1,22 @@
+header{
+    display: flex;
+    justify-content: center;
+}
+h1{
+    font-family: 'Tangerine', serif;
+    font-size: 115px;
+    text-decoration: underline;
+}
 body{
       background-image: url(https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701446676.jpg);
       background-repeat: no-repeat;
 }
-
 #container{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 80vh;
+    min-height: 50vh;
        
 }
 #gridContainer{
@@ -24,7 +32,7 @@ body{
     font-size: 60px;
 }
 .cell{
-    background-color: gray;
+    background-color: white;
 }
 #reset{
     justify-content: center;
