@@ -28,7 +28,6 @@ function createCell() {
     })
 }
 
-// 
 function resetGrid() {
     const newGrid = prompt('Enter Grid Size: ', `${gridTrack}`)
     gridTrack = parseInt(newGrid);
