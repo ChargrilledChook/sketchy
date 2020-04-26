@@ -1,4 +1,8 @@
-let gridTrack = 8;
+// TODO  optional - more complex coloring
+// TODO improve UI / CSS
+
+// Global variables and event listeners
+let gridTrack = 16; 
 let gridSize = gridTrack * gridTrack;
 const gridContainer = document.querySelector('#gridContainer');
 
@@ -7,12 +11,22 @@ reset.addEventListener('click',function(){
     resetGrid();
 });
 
-function updateGrid(){
-    gridContainer.style.gridTemplateColumns = `repeat(${gridTrack}, 1fr)`   // These two lines can probably be consolidated with the right grid property - area?
-    gridContainer.style.gridTemplateRows = `repeat(${gridTrack}, 1fr)`
+// 
+function resetGrid() {
+    const newGrid = prompt('Enter Grid Size: ', '16')
+    gridTrack = parseInt(newGrid);
+    clearGrid();
+    drawGrid();
+}
+
+function clearGrid(){
+    const oldGrid = document.getElementById('gridContainer')
+    oldGrid.innerHTML = '';
 }
 
 function drawGrid() {
+    gridContainer.style.grid = `repeat(${gridTrack}, 1fr) / repeat(${gridTrack}, 1fr)`
+    gridSize = gridTrack * gridTrack;
     for (let i = 0; i < gridSize; i++){
         createCell()
     }
@@ -22,24 +36,10 @@ function createCell() {
     const cell = document.createElement('div'); // largely taken from https://stackoverflow.com/questions/22574633/applying-css-style-to-dynamically-created-div
     cell.className = 'cell'
     gridContainer.insertBefore(cell, gridContainer.firstChild);
+    cell.addEventListener('mouseover', function() {
+        cell.style.backgroundColor = 'black';
+    })
 }
-
-// TODO change grid cell color on hover
-
-function clearGrid(){
-    const oldGrid = document.getElementById('gridContainer')
-    oldGrid.innerHTML = '';
-}
-
-function resetGrid() {
-    const newGrid = prompt('Enter Grid Size: ', '8')
-    gridTrack = parseInt(newGrid);
-    gridSize = gridTrack * gridTrack;
-    clearGrid();
-    updateGrid();
-    drawGrid();
-}
-
-// TODO  optional - more complex coloring
 
 drawGrid()
+
