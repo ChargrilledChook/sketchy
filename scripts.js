@@ -7,7 +7,6 @@ reset.addEventListener('click',function(){
     resetGrid();
 });
 
-
 function updateGrid(){
     gridContainer.style.gridTemplateColumns = `repeat(${gridTrack}, 1fr)`   // These two lines can probably be consolidated with the right grid property - area?
     gridContainer.style.gridTemplateRows = `repeat(${gridTrack}, 1fr)`
@@ -27,7 +26,6 @@ function createCell() {
 
 // TODO change grid cell color on hover
 
-
 function clearGrid(){
     const oldGrid = document.getElementById('gridContainer')
     oldGrid.innerHTML = '';
@@ -41,9 +39,6 @@ function resetGrid() {
     updateGrid();
     drawGrid();
 }
-
-
-    
 
 // TODO  optional - more complex coloring
 
