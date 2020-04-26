@@ -1,0 +1,31 @@
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+     
+}
+#gridContainer{
+    border: 2px solid black;
+    height: 600px;
+    width: 600px;
+    display: inline-grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr)
+}
+
+.test{
+    border: 1px solid black;
+    background-color: gray;
+    text-align: center;
+    font-size: 60px;
+}
+.cell{
+    background-color: hotpink;
+    border: 1px dotted black;
+}
+#reset{
+    justify-content: center;
+    align-items: center;
+}
